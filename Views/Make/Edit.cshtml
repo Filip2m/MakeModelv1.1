@@ -1,0 +1,46 @@
+﻿@model MakeModel.Models.VehicleMake
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>VehicleMake</legend>
+
+        @Html.HiddenFor(model => model.id)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.MakeName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.MakeName)
+            @Html.ValidationMessageFor(model => model.MakeName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.abrv)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.abrv)
+            @Html.ValidationMessageFor(model => model.abrv)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

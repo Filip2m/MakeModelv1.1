@@ -1,0 +1,29 @@
+﻿@model MakeModel.Models.VehicleMake
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>VehicleMake</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MakeName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MakeName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.abrv)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.abrv)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
